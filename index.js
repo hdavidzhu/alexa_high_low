@@ -3,7 +3,7 @@
 
 // IMPORTS =====================================================================
 
-var AlexaSkill = require('libs/AlexaSkill');
+var AlexaSkill = require('libs/alexa_skill');
 var config = require('./config');
 
 
@@ -25,7 +25,7 @@ HighLowBot.prototype.constructor = HighLowBot;
 HighLowBot.prototype.eventHandlers.onSessionStarted = function(sessionStartedRequest, session) {
   console.log("HighLowBot onSessionStarted requestId: " + sessionStartedRequest.requestId + ", sessionId: " + session.sessionId);
 
-  // Another other initialization logic goes here.
+  // Generate random number.
   session.attributes.answer = Math.round(Math.random() * 100);
 }
 
@@ -34,14 +34,9 @@ HighLowBot.prototype.eventHandlers.onLaunch = function(launchRequest, session, r
   response.ask("Guess a number between 0 and 100!");
 }
 
-/**
-* Overridden to show that a subclass can override this function to teardown session state.
-*/
 HighLowBot.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
   console.log("HighLowBot onSessionEnded requestId: " + sessionEndedRequest.requestId
   + ", sessionId: " + session.sessionId);
-
-  // Cleanup logic goes here.
 };
 
 

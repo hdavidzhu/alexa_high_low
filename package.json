@@ -4,11 +4,11 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hdavidzhu/alexa_indico.git"
+    "url": "git+https://github.com/hdavidzhu/alexa_high_low.git"
   },
   "author": "hdavidzhu",
   "bugs": {
-    "url": "https://github.com/hdavidzhu/alexa_indico/issues"
+    "url": "https://github.com/hdavidzhu/alexa_high_low/issues"
   },
-  "homepage": "https://github.com/hdavidzhu/alexa_indico#readme"
+  "homepage": "https://github.com/hdavidzhu/alexa_high_low#readme"
 }
