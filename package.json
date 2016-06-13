@@ -1,11 +1,7 @@
 {
-  "name": "alexa_indico",
+  "name": "alexa_high_low",
   "version": "1.0.0",
-  "description": "Simple app to play with Alexa and Indico.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hdavidzhu/alexa_indico.git"
@@ -14,8 +10,5 @@
   "bugs": {
     "url": "https://github.com/hdavidzhu/alexa_indico/issues"
   },
-  "homepage": "https://github.com/hdavidzhu/alexa_indico#readme",
-  "dependencies": {
-    "indico.io": "^0.9.4"
-  }
+  "homepage": "https://github.com/hdavidzhu/alexa_indico#readme"
 }
