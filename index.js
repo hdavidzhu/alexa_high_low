@@ -31,7 +31,7 @@ HighLowBot.prototype.eventHandlers.onSessionStarted = function(sessionStartedReq
 
 HighLowBot.prototype.eventHandlers.onLaunch = function(launchRequest, session, response) {
   console.log("HighLowBot onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
-  response.ask("Guess a number between 0 and 100!");
+  response.ask("Guess a number between 0 and 100!", "Say a number. For example, fourty two!");
 }
 
 HighLowBot.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
@@ -64,10 +64,10 @@ function handleNumberInput(answer, guess, response) {
   var speechOutput = "That is ";
   if (guess > answer) {
     speechOutput += "too high!";
-    response.ask(speechOutput);
+    response.ask(speechOutput, speechOutput);
   } else if (guess < answer) {
     speechOutput += "too low!";
-    response.ask(speechOutput);
+    response.ask(speechOutput, speechOutput);
   } else if (guess == answer) {
     speechOutput += "the answer! Thanks for playing.";
     response.tell(speechOutput);
