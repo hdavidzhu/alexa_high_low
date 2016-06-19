@@ -48,7 +48,7 @@ HighLowBot.prototype.intentHandlers = {
   },
 
   "AMAZON.HelpIntent": function (intent, session, response) {
-    response.ask("You can tell HighLowBot a number and see if it is correct");
+    response.ask("You can tell HighLowBot a number and see if it is correct", "For example, say try fifty two");
   },
 
   "AMAZON.StopIntent": function (intent, session, response) {
