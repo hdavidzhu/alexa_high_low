@@ -44,7 +44,11 @@ HighLowBot.prototype.eventHandlers.onSessionEnded = function (sessionEndedReques
 
 HighLowBot.prototype.intentHandlers = {
   "GetGuessIntent": function (intent, session, response) {
-    handleNumberInput(session.attributes.answer, intent.slots.Number.value, response);
+    if (intent.slots.Number.value) {
+      handleNumberInput(session.attributes.answer, intent.slots.Number.value, response);
+    } else {
+      handleErrorInput(response);
+    }
   },
 
   "AMAZON.HelpIntent": function (intent, session, response) {
@@ -52,11 +56,11 @@ HighLowBot.prototype.intentHandlers = {
   },
 
   "AMAZON.StopIntent": function (intent, session, response) {
-    response.handleStopRequest(response);
+    handleStopRequest(response);
   },
 
   "AMAZON.CancelIntent": function (intent, session, response) {
-    response.handleStopRequest(response);
+    handleStopRequest(response);
   }
 };
 
@@ -72,6 +76,10 @@ function handleNumberInput(answer, guess, response) {
     speechOutput += "the answer! Thanks for playing.";
     response.tell(speechOutput);
   }
+}
+
+function handleErrorInput(response) {
+  response.ask("Sorry, I did not understand what you've said", "Sorry, try saying a number between zero and one hundred");
 }
 
 function handleStopRequest(response) {
